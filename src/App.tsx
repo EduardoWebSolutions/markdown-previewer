@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import GlobalStyle from "./global.ts";
+import MarkdownLogo from "./assets/MarkdownLogo.tsx";
+import MaximizeLogo from "./assets/MaximizeLogo.tsx";
 
 function App() {
   const [text, setText] =
@@ -21,9 +23,12 @@ function anotherExample(firstLine, lastLine) {
 }
 \`\`\`
   
-You can also make text **bold**... whoa!
+You can also make text **bold**... whoa! 
+
 Or _italic_.
+
 Or... wait for it... **_both!_**
+
 And feel free to go crazy ~~crossing stuff out~~.
   
 There's also [links](https://www.freecodecamp.org), and
@@ -46,7 +51,7 @@ And here. | Okay. | I think we get it.
 1. Use just 1s if you want!
 1. And last but not least, let's not forget embedded images:
   
-![freeCodeCamp Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
+![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
@@ -57,14 +62,30 @@ And here. | Okay. | I think we get it.
       <GlobalStyle />
       <div>
         <div id="editorWrap">
-          <div id="toolbar">Editor</div>
+          <div className="toolbar">
+            <div className="toolbar-title">
+              <MarkdownLogo />
+              Editor
+            </div>
+            <MaximizeLogo />
+          </div>
           <textarea name="" id="" onChange={handleChange}>
             {text}
           </textarea>
         </div>
         <div id="previewerWrap">
-          <div id="toolbar">Previewer</div>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+          <div className="toolbar">
+            <div className="toolbar-title">
+              <MarkdownLogo />
+              Previewer
+            </div>
+            <MaximizeLogo />
+          </div>
+          <div id="previewerWrap-2">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} className="foo">
+              {text}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
     </>
