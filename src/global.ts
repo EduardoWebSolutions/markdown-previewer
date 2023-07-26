@@ -12,6 +12,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background: #87b5b5;
+    margin: 10px 0;
 }
 
 img {
@@ -29,8 +36,8 @@ h2 {
 
 textarea {
     background-color: #C0D8D8;
-    width: 640px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     resize: vertical;
     min-height: 200px;
 }
@@ -38,33 +45,6 @@ textarea {
 textarea:focus {
     outline: none;
 }
-
-#editorWrap {
-    box-sizing: border-box;
-    width: 640px;
-    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
-    margin: auto;
-    border: 1px solid black;
-}
-.toolbar {
-    background-color: #4AA3A3;
-    border-bottom: 1px solid black;
-    font-family: Russo One;
-    display: flex;
-    align-items: center;
-    padding: 7px;
-    justify-content: space-between;
-}
-
-#previewerWrap {
-    background-color: #C0D8D8;
-    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
-    border: 1px solid black;
-}
-#previewerWrap-2 {
-    padding: 15px;
-}
-
 
 code {
     background-color: white;
@@ -82,25 +62,75 @@ table, th, td {
     padding: 1px;
   }
 
-  blockquote {
+blockquote {
     width: auto;
     border-left: 3px solid black;
     padding-left: 5px;
     color: #4AA3A3;
   }
 
-  .maximizer {
-    cursor: pointer;
-    color: red;
-  }
-  .markLogo {
-    margin-right: 5px;
-  }
-
-  .toolbar-title {
+.toolbar {
+    background-color: #4AA3A3;
+    font-family: Russo One;
     display: flex;
     align-items: center;
-  }
+    padding: 7px;
+    justify-content: space-between;
+}
+
+.maximize, .minimize {
+    cursor: pointer;
+    position: relative;
+    
+}
+.maximize:hover, .minimize:hover {
+    fill: green;
+}
+.active {
+    fill: blue;
+    background-color: blue;
+}
+
+.hidden {
+    background-color: red;
+}
+
+.markLogo {
+    margin-right: 5px;
+}
+
+.toolbar-title {
+    display: flex;
+    align-items: center;
+}
+
+#editorWrap {
+    box-sizing: border-box;
+    max-width: 600px;
+    margin: auto;
+}
+
+#editorWrap textarea {
+    background-color: #c0d8d8;
+    border: 1px solid #1d2f2f;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+    border-top: none;
+}
+
+#previewerWrap {
+    background-color: #C0D8D8;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+    border: 1px solid black;
+    max-width: 800px;
+    margin: 1.25rem auto;
+    min-height: 200px;
+    overflow-wrap: break-word;
+}
+
+#previewerWrap-2 {
+    padding: 15px;
+}
+
 
 `;
 

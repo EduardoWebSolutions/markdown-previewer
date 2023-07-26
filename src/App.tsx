@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import GlobalStyle from "./global.ts";
 import MarkdownLogo from "./assets/MarkdownLogo.tsx";
 import MaximizeLogo from "./assets/MaximizeLogo.tsx";
+import MinimizeLogo from "./assets/MinimizeLogo.tsx";
 
 function App() {
   const [text, setText] =
@@ -24,13 +25,10 @@ function anotherExample(firstLine, lastLine) {
 \`\`\`
   
 You can also make text **bold**... whoa! 
-
 Or _italic_.
-
 Or... wait for it... **_both!_**
-
 And feel free to go crazy ~~crossing stuff out~~.
-  
+
 There's also [links](https://www.freecodecamp.org), and
 > Block Quotes!
   
@@ -53,8 +51,15 @@ And here. | Okay. | I think we get it.
   
 ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
 
+  const [active, setActive] = useState<boolean>(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
+  };
+
+  const handleActive = () => {
+    setActive((prevActive) => !prevActive);
+    console.log(active);
   };
 
   return (
@@ -63,11 +68,23 @@ And here. | Okay. | I think we get it.
       <div>
         <div id="editorWrap">
           <div className="toolbar">
-            <div className="toolbar-title">
+            <div>
               <MarkdownLogo />
               Editor
             </div>
-            <MaximizeLogo />
+            <div>
+              {active ? (
+                <MaximizeLogo
+                  className={active ? "active" : "hidden"}
+                  onClick={handleActive}
+                />
+              ) : (
+                <MinimizeLogo
+                  className={active ? "active" : "hidden"}
+                  onClick={handleActive}
+                />
+              )}
+            </div>
           </div>
           <textarea name="" id="" onChange={handleChange}>
             {text}
@@ -75,11 +92,12 @@ And here. | Okay. | I think we get it.
         </div>
         <div id="previewerWrap">
           <div className="toolbar">
-            <div className="toolbar-title">
-              <MarkdownLogo />
-              Previewer
-            </div>
-            <MaximizeLogo />
+            <MarkdownLogo />
+            Previewer
+            <MinimizeLogo
+              className={active ? "active" : "hidden"}
+              onClick={handleActive}
+            />
           </div>
           <div id="previewerWrap-2">
             <ReactMarkdown remarkPlugins={[remarkGfm]} className="foo">
