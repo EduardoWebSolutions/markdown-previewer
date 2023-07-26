@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+
+:root {
+
+}
 * {
     box-sizing: border-box;
 }
@@ -34,17 +38,7 @@ h2 {
     border-bottom: 1px solid #224B4B;
 }
 
-textarea {
-    background-color: #C0D8D8;
-    width: 100%;
-    height: 100%;
-    resize: vertical;
-    min-height: 200px;
-}
 
-textarea:focus {
-    outline: none;
-}
 
 code {
     background-color: white;
@@ -76,6 +70,7 @@ blockquote {
     align-items: center;
     padding: 7px;
     justify-content: space-between;
+    border: 1px solid black;
 }
 
 .maximize, .minimize {
@@ -83,32 +78,33 @@ blockquote {
     position: relative;
     
 }
+
 .maximize:hover, .minimize:hover {
     fill: green;
 }
+
 .active {
-    fill: blue;
-    background-color: blue;
+   cursor: pointer;
 }
 
-.hidden {
-    background-color: red;
+.active:hover {
+    fill: lightgreen;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+}
+
+.center svg {
+    margin-right: 8px;
 }
 
 .markLogo {
     margin-right: 5px;
 }
 
-.toolbar-title {
-    display: flex;
-    align-items: center;
-}
 
-#editorWrap {
-    box-sizing: border-box;
-    max-width: 600px;
-    margin: auto;
-}
 
 #editorWrap textarea {
     background-color: #c0d8d8;
@@ -118,13 +114,7 @@ blockquote {
 }
 
 #previewerWrap {
-    background-color: #C0D8D8;
-    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
-    border: 1px solid black;
-    max-width: 800px;
-    margin: 1.25rem auto;
-    min-height: 200px;
-    overflow-wrap: break-word;
+
 }
 
 #previewerWrap-2 {
