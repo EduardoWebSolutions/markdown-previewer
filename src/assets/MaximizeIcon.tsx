@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 import { MaximizeProps } from "../../utils/Types";
-=======
-interface MaximizeProps {
-  className?: string;
-  onClick: () => void;
-}
->>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
 
 const MaximizeIcon: React.FC<MaximizeProps> = ({ className, onClick }) => {
   return (

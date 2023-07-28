@@ -52,7 +52,6 @@ And here. | Okay. | I think we get it.
     setText(e.target.value);
   };
 
-<<<<<<< HEAD
   const changeClasses = () => {
     const element1 = document.getElementById("element1");
     const element2 = document.getElementById("element2");
@@ -81,13 +80,6 @@ And here. | Okay. | I think we get it.
         onClick={changeClasses}
         className=""
       />
-=======
-  return (
-    <>
-      <GlobalStyle />
-      <Editor text={text} onChange={handleChange} />
-      <Previewer text={text} />
->>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
     </>
   );
 }
