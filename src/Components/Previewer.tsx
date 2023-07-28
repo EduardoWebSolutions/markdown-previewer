@@ -11,7 +11,7 @@ const PreviewerWrap = styled.div`
   border: 1px solid black;
   max-width: 800px;
   min-width: 800px;
-  margin: ${(props) => props.theme.main};
+  margin: 1.24rem auto;
   min-height: 200px;
   overflow-wrap: break-word;
 `;
@@ -21,11 +21,19 @@ const PreviewerDiv = styled.div`
 `;
 
 //OLD margin (margin: 1.25rem auto;)
-const Previewer: React.FC<PreviewerProps> = (props) => {
-  const { text, onClick } = props;
+const Previewer: React.FC<PreviewerProps> = ({
+  text,
+  onMinMaxClick,
+  isMinimized,
+  name,
+}) => {
   return (
-    <PreviewerWrap id="element1" className="">
-      <Toolbar name="Previewer" onClick={onClick} />
+    <PreviewerWrap className={isMinimized ? "hidden" : "active"}>
+      <Toolbar
+        name="Previewer"
+        onMinMaxClick={onMinMaxClick}
+        isMinimized={isMinimized}
+      />
       <PreviewerDiv>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
       </PreviewerDiv>

@@ -84,11 +84,7 @@ blockquote {
 }
 
 .active {
-   cursor: pointer;
-}
-
-.active:hover {
-    fill: lightgreen;
+    height: 100vh;
 }
 
 .center {

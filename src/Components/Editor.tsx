@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ChildProps } from "../../utils/Types";
+import { EditorProps } from "../../utils/Types";
 import Toolbar from "./Toolbar";
 
 const EditorW = styled.div`
@@ -21,13 +21,20 @@ const TextArea = styled.textarea`
   }
 `;
 
-const Editor: React.FC<ChildProps> = (props) => {
-  const { text, onChange, onClick } = props;
-
+const Editor: React.FC<EditorProps> = ({
+  text,
+  onChange,
+  isMinimized,
+  onMinMaxClick,
+}) => {
   return (
-    <EditorW>
-      <Toolbar name="Editor" onClick={onClick} />
-      <TextArea name="" id="" onChange={onChange}>
+    <EditorW className={isMinimized ? "hidden" : "active"}>
+      <Toolbar
+        name="Editor"
+        onMinMaxClick={onMinMaxClick}
+        isMinimized={isMinimized}
+      />
+      <TextArea name="" onChange={onChange}>
         {text}
       </TextArea>
     </EditorW>

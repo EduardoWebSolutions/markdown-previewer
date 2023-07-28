@@ -48,20 +48,21 @@ And here. | Okay. | I think we get it.
 
 ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
 
+  const [isEditorActive, setIsEditorActive] = useState<boolean>(true);
+  const [isPreviewerActive, setIsPreviewerActive] = useState<boolean>(true);
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
-  const changeClasses = () => {
-    const element1 = document.getElementById("element1");
-    const element2 = document.getElementById("element2");
+  const handleEditorMinMaxClick = () => {
+    setIsEditorActive((prevIsEditorActive) => !prevIsEditorActive);
+    setIsPreviewerActive(true);
+  };
 
-    if (element1 && element2) {
-      element1.classList.toggle("classA");
-      element1.classList.toggle("classB");
-      element2.classList.toggle("classA");
-      element2.classList.toggle("classB");
-    }
+  const handlePreviewerMinMaxClick = () => {
+    setIsPreviewerActive((prevIsPreviewerActive) => !prevIsPreviewerActive);
+    setIsEditorActive(true);
   };
 
   return (
@@ -70,15 +71,13 @@ And here. | Okay. | I think we get it.
       <Editor
         text={text}
         onChange={handleChange}
-        id="element1"
-        onClick={changeClasses}
-        className=""
+        isMinimized={!isEditorActive}
+        onMinMaxClick={handleEditorMinMaxClick}
       />
       <Previewer
         text={text}
-        id="element2"
-        onClick={changeClasses}
-        className=""
+        isMinimized={!isPreviewerActive}
+        onMinMaxClick={handlePreviewerMinMaxClick}
       />
     </>
   );
