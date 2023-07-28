@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { PreviewerProps } from "../../utils/Types";
 import Toolbar from "./Toolbar";
+<<<<<<< HEAD
 import { styled } from "styled-components";
 
 const PreviewerWrap = styled.div`
@@ -30,6 +31,20 @@ const Previewer: React.FC<PreviewerProps> = (props) => {
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
       </PreviewerDiv>
     </PreviewerWrap>
+=======
+
+const Previewer: React.FC<PreviewerProps> = (props) => {
+  const { text } = props;
+  return (
+    <div id="previewerWrap">
+      <Toolbar name="Previewer" />
+      <div id="previewerWrap-2">
+        <ReactMarkdown remarkPlugins={[remarkGfm]} className="foo">
+          {text}
+        </ReactMarkdown>
+      </div>
+    </div>
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
   );
 };
 

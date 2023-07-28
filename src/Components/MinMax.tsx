@@ -9,6 +9,7 @@ const MinMax: React.FC = () => {
     setActive((prevActive) => !prevActive);
   };
 
+<<<<<<< HEAD
   const changeClasses = () => {
     const element1 = document.getElementById("element1");
     const element2 = document.getElementById("element2");
@@ -39,6 +40,14 @@ const MinMax: React.FC = () => {
           onClick={actionButton}
           className="active"
         />
+=======
+  return (
+    <>
+      {active ? (
+        <MinimizeIcon onClick={handleActive} className="active" />
+      ) : (
+        <MaximizeIcon onClick={handleActive} className="active" />
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
       )}
     </>
   );

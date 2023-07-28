@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import { MinimizeProps } from "../../utils/Types";
+=======
+interface MinimizeProps {
+  className?: string;
+  onClick: () => void;
+}
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
 
 const MinimizeIcon: React.FC<MinimizeProps> = ({ className, onClick }) => {
   return (

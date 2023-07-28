@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { styled } from "styled-components";
 import { ChildProps } from "../../utils/Types";
 import Toolbar from "./Toolbar";
@@ -31,6 +32,21 @@ const Editor: React.FC<ChildProps> = (props) => {
         {text}
       </TextArea>
     </EditorW>
+=======
+import { ChildProps } from "../../utils/Types";
+import Toolbar from "./Toolbar";
+
+const Editor: React.FC<ChildProps> = (props) => {
+  const { text, onChange } = props;
+
+  return (
+    <div id="editorWrap">
+      <Toolbar name="Editor" />
+      <textarea name="" id="" onChange={onChange}>
+        {text}
+      </textarea>
+    </div>
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
   );
 };
 

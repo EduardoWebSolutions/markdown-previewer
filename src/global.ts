@@ -104,7 +104,16 @@ blockquote {
     margin-right: 5px;
 }
 
+<<<<<<< HEAD
 
+=======
+#editorWrap {
+    box-sizing: border-box;
+    min-width: 600px;
+    max-width: 600px;
+    margin: auto;
+}
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
 
 #editorWrap textarea {
     background-color: #c0d8d8;
@@ -114,7 +123,18 @@ blockquote {
 }
 
 #previewerWrap {
+<<<<<<< HEAD
 
+=======
+    background-color: #C0D8D8;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+    border: 1px solid black;
+    max-width: 800px;
+    min-width: 800px;
+    margin: 1.25rem auto;
+    min-height: 200px;
+    overflow-wrap: break-word;
+>>>>>>> 2c2e6a850637be18f64ec0e8561fd385ed2e9de0
 }
 
 #previewerWrap-2 {
