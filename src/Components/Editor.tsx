@@ -22,11 +22,11 @@ const TextArea = styled.textarea`
 `;
 
 const Editor: React.FC<ChildProps> = (props) => {
-  const { text, onChange } = props;
+  const { text, onChange, onClick } = props;
 
   return (
     <EditorW>
-      <Toolbar name="Editor" />
+      <Toolbar name="Editor" onClick={onClick} />
       <TextArea name="" id="" onChange={onChange}>
         {text}
       </TextArea>

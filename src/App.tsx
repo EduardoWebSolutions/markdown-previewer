@@ -52,11 +52,34 @@ And here. | Okay. | I think we get it.
     setText(e.target.value);
   };
 
+  const changeClasses = () => {
+    const element1 = document.getElementById("element1");
+    const element2 = document.getElementById("element2");
+
+    if (element1 && element2) {
+      element1.classList.toggle("classA");
+      element1.classList.toggle("classB");
+      element2.classList.toggle("classA");
+      element2.classList.toggle("classB");
+    }
+  };
+
   return (
     <>
       <GlobalStyle />
-      <Editor text={text} onChange={handleChange} />
-      <Previewer text={text} />
+      <Editor
+        text={text}
+        onChange={handleChange}
+        id="element1"
+        onClick={changeClasses}
+        className=""
+      />
+      <Previewer
+        text={text}
+        id="element2"
+        onClick={changeClasses}
+        className=""
+      />
     </>
   );
 }

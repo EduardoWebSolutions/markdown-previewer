@@ -11,18 +11,24 @@ const PreviewerWrap = styled.div`
   border: 1px solid black;
   max-width: 800px;
   min-width: 800px;
-  margin: 1.25rem auto;
+  margin: ${(props) => props.theme.main};
   min-height: 200px;
   overflow-wrap: break-word;
 `;
 
-const Previewer: React.FC<PreviewerProps> = (props) => {
-  const { text } = props;
-  return (
-    <PreviewerWrap>
-      <Toolbar name="Previewer" />
+const PreviewerDiv = styled.div`
+  margin: 1em;
+`;
 
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+//OLD margin (margin: 1.25rem auto;)
+const Previewer: React.FC<PreviewerProps> = (props) => {
+  const { text, onClick } = props;
+  return (
+    <PreviewerWrap id="element1" className="">
+      <Toolbar name="Previewer" onClick={onClick} />
+      <PreviewerDiv>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+      </PreviewerDiv>
     </PreviewerWrap>
   );
 };
