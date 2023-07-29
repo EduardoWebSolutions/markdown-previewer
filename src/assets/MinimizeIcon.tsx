@@ -1,6 +1,6 @@
-import { MinimizeProps } from "../../utils/Types";
+import { MinimizeIconProps } from "../../utils/Types";
 
-const MinimizeIcon: React.FC<MinimizeProps> = ({ onClick }) => {
+const MinimizeIcon: React.FC<MinimizeIconProps> = ({ onClick }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

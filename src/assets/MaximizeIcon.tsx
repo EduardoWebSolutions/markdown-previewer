@@ -1,6 +1,6 @@
-import { MaximizeProps } from "../../utils/Types";
+import { MaximizeIconProps } from "../../utils/Types";
 
-const MaximizeIcon: React.FC<MaximizeProps> = ({ onClick }) => {
+const MaximizeIcon: React.FC<MaximizeIconProps> = ({ onClick }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

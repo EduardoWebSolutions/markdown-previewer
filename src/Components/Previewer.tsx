@@ -23,16 +23,17 @@ const PreviewerDiv = styled.div`
 //OLD margin (margin: 1.25rem auto;)
 const Previewer: React.FC<PreviewerProps> = ({
   text,
-  onMinMaxClick,
-  isMinimized,
-  name,
+  toggleActive,
+  isActive,
 }) => {
   return (
-    <PreviewerWrap className={isMinimized ? "hidden" : "active"}>
+    <PreviewerWrap
+      className={isActive === 2 ? "active" : isActive === 3 ? "hidden" : ""}
+    >
       <Toolbar
         name="Previewer"
-        onMinMaxClick={onMinMaxClick}
-        isMinimized={isMinimized}
+        toggleActive={toggleActive}
+        isActive={isActive}
       />
       <PreviewerDiv>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>

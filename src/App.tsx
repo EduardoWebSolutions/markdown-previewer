@@ -2,6 +2,7 @@ import GlobalStyle from "./global.ts";
 import Editor from "./Components/Editor.tsx";
 import { useState } from "react";
 import Previewer from "./Components/Previewer.tsx";
+import "../utils/Types.ts";
 
 function App() {
   const [text, setText] =
@@ -48,21 +49,19 @@ And here. | Okay. | I think we get it.
 
 ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
 
-  const [isEditorActive, setIsEditorActive] = useState<boolean>(true);
-  const [isPreviewerActive, setIsPreviewerActive] = useState<boolean>(true);
+  const [isActive, setIsActive] = useState<number>(-1);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
-  const handleEditorMinMaxClick = () => {
-    setIsEditorActive((prevIsEditorActive) => !prevIsEditorActive);
-    setIsPreviewerActive(true);
-  };
-
-  const handlePreviewerMinMaxClick = () => {
-    setIsPreviewerActive((prevIsPreviewerActive) => !prevIsPreviewerActive);
-    setIsEditorActive(true);
+  const toggleActiveFunction = (num: number): void => {
+    if (num === isActive) {
+      return setIsActive(-1);
+    }
+    setIsActive(num);
+    console.log(num);
+    console.log(isActive);
   };
 
   return (
@@ -71,13 +70,15 @@ And here. | Okay. | I think we get it.
       <Editor
         text={text}
         onChange={handleChange}
-        isMinimized={!isEditorActive}
-        onMinMaxClick={handleEditorMinMaxClick}
+        toggleActive={() => toggleActiveFunction(3)}
+        isActive={isActive}
+        num={3}
       />
       <Previewer
         text={text}
-        isMinimized={!isPreviewerActive}
-        onMinMaxClick={handlePreviewerMinMaxClick}
+        toggleActive={() => toggleActiveFunction(2)}
+        isActive={isActive}
+        num={2}
       />
     </>
   );

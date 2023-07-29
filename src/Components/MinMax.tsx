@@ -1,20 +1,24 @@
 import { MinMaxProps } from "../../utils/Types";
 import MaximizeIcon from "../assets/MaximizeIcon";
 import MinimizeIcon from "../assets/MinimizeIcon";
-import React from "react";
+import React, { useState } from "react";
 
-const MinMax: React.FC<MinMaxProps> = ({ active, onClick }) => {
-  // const [active, setActive] = useState<boolean>(false);
-  // const handleActive = () => {
-  //   setActive((prevActive) => !prevActive);
-  // };
+const MinMax: React.FC<MinMaxProps> = ({ toggleActive, isActive }) => {
+  const [actived, setActived] = useState<boolean>(false);
+  const handleActived = () => {
+    setActived((prevActived) => !prevActived);
+  };
 
+  const handleTwo = () => {
+    handleActived();
+    toggleActive(isActive);
+  };
   return (
     <>
-      {active ? (
-        <MinimizeIcon onClick={onClick} />
+      {actived ? (
+        <MinimizeIcon onClick={handleTwo} />
       ) : (
-        <MaximizeIcon onClick={onClick} />
+        <MaximizeIcon onClick={handleTwo} />
       )}
     </>
   );

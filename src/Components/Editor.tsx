@@ -24,19 +24,15 @@ const TextArea = styled.textarea`
 const Editor: React.FC<EditorProps> = ({
   text,
   onChange,
-  isMinimized,
-  onMinMaxClick,
+  toggleActive,
+  isActive,
 }) => {
   return (
-    <EditorW className={isMinimized ? "hidden" : "active"}>
-      <Toolbar
-        name="Editor"
-        onMinMaxClick={onMinMaxClick}
-        isMinimized={isMinimized}
-      />
-      <TextArea name="" onChange={onChange}>
-        {text}
-      </TextArea>
+    <EditorW
+      className={isActive === 3 ? "active" : isActive === 2 ? "hidden" : ""}
+    >
+      <Toolbar name="Editor" toggleActive={toggleActive} isActive={isActive} />
+      <TextArea onChange={onChange}>{text}</TextArea>
     </EditorW>
   );
 };
