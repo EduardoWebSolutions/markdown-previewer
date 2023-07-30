@@ -13,7 +13,6 @@ const PreviewerWrap = styled.div`
   min-width: 800px;
   margin: 1.24rem auto;
   min-height: 200px;
-  overflow-wrap: break-word;
 `;
 
 const PreviewerDiv = styled.div`

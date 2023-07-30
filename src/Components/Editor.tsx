@@ -6,6 +6,7 @@ const EditorW = styled.div`
   box-sizing: border-box;
   min-width: 600px;
   max-width: 600px;
+  height: 100%;
   margin: auto;
 `;
 
@@ -15,6 +16,9 @@ const TextArea = styled.textarea`
   height: 100%;
   resize: vertical;
   min-height: 200px;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border-top: none;
 
   &:focus {
     outline: none;

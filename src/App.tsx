@@ -38,9 +38,9 @@ Your content can | be here, and it | can be here....
 And here. | Okay. | I think we get it.
 
 - And of course there are lists.
-- Some are bulleted.
-- With different indentation levels.
-- That look like this.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
 
 
 1. And there are numbered lists too.
