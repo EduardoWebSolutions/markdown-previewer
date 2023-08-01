@@ -3,6 +3,7 @@ import Editor from "./Components/Editor.tsx";
 import { useState } from "react";
 import Previewer from "./Components/Previewer.tsx";
 import "../utils/Types.ts";
+import Footer from "./Components/Footer.tsx";
 
 function App() {
   const [text, setText] =
@@ -80,6 +81,7 @@ And here. | Okay. | I think we get it.
         isActive={isActive}
         num={2}
       />
+      <Footer />
     </>
   );
 }
