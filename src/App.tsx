@@ -12,7 +12,7 @@ function App() {
 
 Here's some code, \`<div></div>\`, between 2 backticks.
 
-\`\`\`
+\`\`\`js
 // this is multi-line code:
 
 function anotherExample(firstLine, lastLine) {
@@ -22,9 +22,9 @@ function anotherExample(firstLine, lastLine) {
 }
 \`\`\`
 
-You can also make text **bold**... whoa! 
-Or _italic_.
-Or... wait for it... **_both!_**
+You can also make text **bold**... whoa!\n 
+Or _italic_.\n
+Or... wait for it... **_both!_**\n
 And feel free to go crazy ~~crossing stuff out~~.
 
 There's also [links](https://www.markdownguide.org/), and

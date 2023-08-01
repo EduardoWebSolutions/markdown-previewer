@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-
 :root {
 
 --primary-color: #87B5B5;
@@ -46,22 +45,16 @@ h2 {
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-
-
 code {
-    background-color: var(--codeBackground-color);
+    background-color: #F8F8FF;
 }
 
-pre {
-    background-color: var(--codeBackground-color);
-    margin: 10px;
-    padding: 10px;
-}
-
-table, th, td {
-    border: 1px solid var(--table-color);
-    padding: 1px;
+table {
+    border-collapse: collapse;
   }
+th, td {
+	border: 2px solid black;
+}
 
 blockquote {
     width: auto;
@@ -102,16 +95,12 @@ blockquote {
     margin-right: 5px;
 }
 
-
 #editorWrap textarea {
     background-color: #c0d8d8;
     border: 1px solid #1d2f2f;
     box-shadow: 1px 1px 10px 2px #3a5f5f;
     border-top: none;
 }
-
-
-
 `;
 
 export default GlobalStyle;

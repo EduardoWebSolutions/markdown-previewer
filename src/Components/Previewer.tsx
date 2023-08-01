@@ -4,6 +4,8 @@ import remarkGfm from "remark-gfm";
 import { PreviewerProps } from "../../utils/Types";
 import Toolbar from "./Toolbar";
 import { styled } from "styled-components";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const PreviewerWrap = styled.div`
   background-color: #c0d8d8;
@@ -35,7 +37,29 @@ const Previewer: React.FC<PreviewerProps> = ({
         isActive={isActive}
       />
       <PreviewerDiv>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+        <ReactMarkdown
+          children={text}
+          remarkPlugins={[remarkGfm]}
+          components={{
+            code({ inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || "");
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  {...props}
+                  children={String(children).replace(/\n$/, "")}
+                  style={docco}
+                  language="javascript"
+                  PreTag="div"
+                />
+              ) : (
+                <code {...props} className={className}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        />
+        ,
       </PreviewerDiv>
     </PreviewerWrap>
   );
