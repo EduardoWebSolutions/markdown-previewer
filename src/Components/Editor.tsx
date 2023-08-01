@@ -36,7 +36,12 @@ const Editor: React.FC<EditorProps> = ({
       className={isActive === 3 ? "active" : isActive === 2 ? "hidden" : ""}
     >
       <Toolbar name="Editor" toggleActive={toggleActive} isActive={isActive} />
-      <TextArea onChange={onChange}>{text}</TextArea>
+      <TextArea
+        className={isActive === 3 ? "active" : isActive === 2 ? "hidden" : ""}
+        onChange={onChange}
+      >
+        {text}
+      </TextArea>
     </EditorW>
   );
 };

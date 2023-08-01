@@ -82,7 +82,7 @@ blockquote {
 }
 
 .active {
-    height: 100¨%;
+    height: 1200px;
 }
 
 .hidden {
