@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import React from "react";
->>>>>>> c64bb2f10bacc8bbd8af71a8309cdd736a45f367
 import { styled } from "styled-components";
 
 const Footer = () => {
