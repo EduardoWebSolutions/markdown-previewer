@@ -75,7 +75,7 @@ blockquote {
 }
 
 .active {
-    height: 1200px;
+    height: 1400px;
 }
 
 .hidden {
