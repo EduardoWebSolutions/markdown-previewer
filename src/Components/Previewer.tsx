@@ -36,7 +36,7 @@ const Previewer: React.FC<PreviewerProps> = ({
         toggleActive={toggleActive}
         isActive={isActive}
       />
-      <PreviewerDiv>
+      <PreviewerDiv id="preview">
         <ReactMarkdown
           children={text}
           remarkPlugins={[remarkGfm]}
@@ -59,7 +59,6 @@ const Previewer: React.FC<PreviewerProps> = ({
             },
           }}
         />
-        ,
       </PreviewerDiv>
     </PreviewerWrap>
   );

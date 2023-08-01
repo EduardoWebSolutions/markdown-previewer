@@ -39,6 +39,7 @@ const Editor: React.FC<EditorProps> = ({
       <TextArea
         className={isActive === 3 ? "active" : isActive === 2 ? "hidden" : ""}
         onChange={onChange}
+        id="editor"
       >
         {text}
       </TextArea>
