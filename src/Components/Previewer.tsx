@@ -35,6 +35,7 @@ const Previewer: React.FC<PreviewerProps> = ({
         name="Previewer"
         toggleActive={toggleActive}
         isActive={isActive}
+        text={text}
       />
       <PreviewerDiv id="preview">
         <ReactMarkdown

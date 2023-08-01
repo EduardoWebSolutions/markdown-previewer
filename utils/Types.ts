@@ -19,11 +19,16 @@ export interface ToolbarProps {
   name: string;
   toggleActive: (num: number) => void;
   isActive: number;
+  text: string;
 }
 
 export interface MinMaxProps {
   toggleActive: (num: number) => void;
   isActive: number;
+}
+
+export interface CopyIconProps {
+  onClick: () => void;
 }
 
 export interface MaximizeIconProps {

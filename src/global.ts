@@ -85,14 +85,21 @@ blockquote {
 .center {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .center svg {
     margin-right: 8px;
 }
 
+
 .markLogo {
     margin-right: 5px;
+}
+
+.copy:hover {
+    cursor: pointer;
+    fill: white;
 }
 
 #editorWrap textarea {
