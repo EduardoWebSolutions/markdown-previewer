@@ -2,9 +2,14 @@ import { styled } from "styled-components";
 
 const Footer = () => {
   const StyledFooter = styled.footer`
+    font-family: inherit;
     text-align: center;
+    overflow: none;
   `;
   const StyledAnchor = styled.a`
+    text-decoration: underline;
+    font-weight: bold;
+
     &:visited {
       color: black;
     }
@@ -12,7 +17,7 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-      Develop by:
+      Develop by:{" "}
       <StyledAnchor
         href="https://github.com/EduardoWebSolutions"
         target="_blank"

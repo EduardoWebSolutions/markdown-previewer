@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 :root {
-
 --primary-color: #87B5B5;
 --secondary-color: #4AA3A3;
 --tertiary-color: #224B4B;
@@ -11,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 --codeBackground-color: white;
 --table-color: black;
 --hover-color: lightgreen;
- 
 }
 
 * {
@@ -52,6 +50,7 @@ code {
 table {
     border-collapse: collapse;
   }
+
 th, td {
 	border: 2px solid black;
 }
@@ -63,19 +62,18 @@ blockquote {
     color: var(--secondary-color);
   }
 
-
 .minmax {
     cursor: pointer;
     position: relative;
-    
+    margin-left: 3px;
 }
 
 .minmax:hover {
     fill: var(--hover-color);
 }
 
-.active {
-    height: 1400px;
+.maximized {
+    min-height: 95vh;
 }
 
 .hidden {
@@ -92,7 +90,6 @@ blockquote {
     margin-right: 8px;
 }
 
-
 .markLogo {
     margin-right: 5px;
 }
@@ -100,13 +97,6 @@ blockquote {
 .copy:hover {
     cursor: pointer;
     fill: white;
-}
-
-#editorWrap textarea {
-    background-color: #c0d8d8;
-    border: 1px solid #1d2f2f;
-    box-shadow: 1px 1px 10px 2px #3a5f5f;
-    border-top: none;
 }
 `;
 

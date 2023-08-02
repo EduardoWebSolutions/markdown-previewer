@@ -14,25 +14,26 @@ const StyledToolbar = styled.div`
   padding: 7px;
   justify-content: space-between;
   border: 1px solid var(--table-color);
+  user-select: none;
 `;
 
 const Toolbar: React.FC<ToolbarProps> = ({
   name,
-  toggleActive,
-  isActive,
-  text,
+  editorText,
+  toggleMaximize,
+  whoIsMaximized,
 }) => {
-  const [viewCopied, setViewCopied] = useState<boolean>(false);
+  const [wasCopied, setWasCopied] = useState<boolean>(false);
 
-  const copy = (text: string) => {
-    navigator.clipboard.writeText(text);
+  const copyToClipboard = (editorText: string) => {
+    navigator.clipboard.writeText(editorText);
   };
 
-  const handle2 = (text: string) => {
-    copy(text);
-    setViewCopied(true);
-    setTimeout(function copyd() {
-      setViewCopied(false);
+  const handleCopied = (editorText: string) => {
+    copyToClipboard(editorText);
+    setWasCopied(true);
+    setTimeout(() => {
+      setWasCopied(false);
     }, 2000);
   };
 
@@ -43,15 +44,18 @@ const Toolbar: React.FC<ToolbarProps> = ({
         {name}
       </div>
       <div className="center">
-        {viewCopied ? (
+        {wasCopied ? (
           <>
             <CheckedIcon />
             Copied
           </>
         ) : (
-          <CopyIcon onClick={() => handle2(text)} />
+          <CopyIcon onClick={() => handleCopied(editorText)} />
         )}
-        <MinMax toggleActive={toggleActive} isActive={isActive} />
+        <MinMax
+          toggleMaximize={toggleMaximize}
+          whoIsMaximized={whoIsMaximized}
+        />
       </div>
     </StyledToolbar>
   );

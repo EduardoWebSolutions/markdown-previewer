@@ -3,22 +3,23 @@ import MaximizeIcon from "../assets/MaximizeIcon";
 import MinimizeIcon from "../assets/MinimizeIcon";
 import React, { useState } from "react";
 
-const MinMax: React.FC<MinMaxProps> = ({ toggleActive, isActive }) => {
-  const [actived, setActived] = useState<boolean>(false);
-  const handleActived = () => {
-    setActived((prevActived) => !prevActived);
+const MinMax: React.FC<MinMaxProps> = ({ toggleMaximize, whoIsMaximized }) => {
+  const [isMaximized, setIsMaximized] = useState<boolean>(false);
+
+  const handleMaximized = () => {
+    setIsMaximized((prevIsMaximized) => !prevIsMaximized);
   };
 
-  const handleTwo = () => {
-    handleActived();
-    toggleActive(isActive);
+  const handleWhoIsMaximized = () => {
+    handleMaximized();
+    toggleMaximize(whoIsMaximized);
   };
   return (
     <>
-      {actived ? (
-        <MinimizeIcon onClick={handleTwo} />
+      {isMaximized ? (
+        <MinimizeIcon onClick={handleWhoIsMaximized} />
       ) : (
-        <MaximizeIcon onClick={handleTwo} />
+        <MaximizeIcon onClick={handleWhoIsMaximized} />
       )}
     </>
   );

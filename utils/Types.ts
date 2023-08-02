@@ -1,39 +1,39 @@
 import { ChangeEvent } from "react";
 
 export interface EditorProps {
-  text: string;
+  editorText: string;
+  maximizeId: number;
+  whoIsMaximized: number;
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-  num: number;
-  toggleActive: (num: number) => void;
-  isActive: number;
+  toggleMaximize: (num: number) => void;
 }
 
 export interface PreviewerProps {
-  text: string;
-  toggleActive: (num: number) => void;
-  num: number;
-  isActive: number;
+  editorText: string;
+  maximizeId: number;
+  whoIsMaximized: number;
+  toggleMaximize: (num: number) => void;
 }
 
 export interface ToolbarProps {
   name: string;
-  toggleActive: (num: number) => void;
-  isActive: number;
-  text: string;
+  editorText: string;
+  whoIsMaximized: number;
+  toggleMaximize: (num: number) => void;
 }
 
 export interface MinMaxProps {
-  toggleActive: (num: number) => void;
-  isActive: number;
+  whoIsMaximized: number;
+  toggleMaximize: (num: number) => void;
 }
 
-export interface CopyIconProps {
+export type CopyIconProps = {
   onClick: () => void;
-}
+};
 
-export interface MaximizeIconProps {
+export type MaximizeIconProps = {
   onClick: () => void;
-}
-export interface MinimizeIconProps {
+};
+export type MinimizeIconProps = {
   onClick: () => void;
-}
+};

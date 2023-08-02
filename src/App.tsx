@@ -1,11 +1,12 @@
+import { useState } from "react";
 import GlobalStyle from "./global.ts";
 import Editor from "./Components/Editor.tsx";
-import { useState } from "react";
 import Previewer from "./Components/Previewer.tsx";
+import Footer from "./Components/Footer.tsx";
 import "../utils/Types.ts";
 
 function App() {
-  const [text, setText] =
+  const [editorText, setEditorText] =
     useState<string>(`# Welcome to my React Markdown Previewer!
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -49,37 +50,35 @@ And here. | Okay. | I think we get it.
 
 ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png)`);
 
-  const [isActive, setIsActive] = useState<number>(-1);
+  const [whoIsMaximized, setWhoIsMaximized] = useState<number>(-1);
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
+  const handleEditorChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setEditorText(e.target.value);
   };
 
-  const toggleActiveFunction = (num: number): void => {
-    if (num === isActive) {
-      return setIsActive(-1);
-    }
-    setIsActive(num);
-    console.log(num);
-    console.log(isActive);
+  const toggleMaximize = (maximizeId: number) => {
+    maximizeId === whoIsMaximized
+      ? setWhoIsMaximized(-1)
+      : setWhoIsMaximized(maximizeId);
   };
 
   return (
     <>
       <GlobalStyle />
       <Editor
-        text={text}
-        onChange={handleChange}
-        toggleActive={() => toggleActiveFunction(3)}
-        isActive={isActive}
-        num={3}
+        editorText={editorText}
+        onChange={handleEditorChange}
+        toggleMaximize={() => toggleMaximize(3)}
+        whoIsMaximized={whoIsMaximized}
+        maximizeId={3}
       />
       <Previewer
-        text={text}
-        toggleActive={() => toggleActiveFunction(2)}
-        isActive={isActive}
-        num={2}
+        editorText={editorText}
+        toggleMaximize={() => toggleMaximize(2)}
+        whoIsMaximized={whoIsMaximized}
+        maximizeId={2}
       />
+      <Footer />
     </>
   );
 }
