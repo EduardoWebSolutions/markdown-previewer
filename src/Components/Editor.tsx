@@ -16,6 +16,12 @@ const StyledEditorWrap = styled.div`
   &.hidden {
     display: none;
   }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
 `;
 
 const StyledTextArea = styled.textarea`
@@ -34,6 +40,12 @@ const StyledTextArea = styled.textarea`
 
   &.maximized {
     min-height: 95vh;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 `;
 const editorClassNames = (whoIsMaximized: number) =>

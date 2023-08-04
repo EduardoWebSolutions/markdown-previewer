@@ -23,6 +23,11 @@ const StyledPreviewWrap = styled.div`
   &.hidden {
     display: none;
   }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+  }
 `;
 
 const StyledPreviewDiv = styled.div`
