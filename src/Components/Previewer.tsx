@@ -15,11 +15,22 @@ const StyledPreviewWrap = styled.div`
   min-width: 800px;
   margin: 1.24rem auto;
   min-height: 200px;
+
+  &.maximized {
+    min-height: 95vh;
+  }
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 const StyledPreviewDiv = styled.div`
   margin: 1em;
 `;
+
+const PreviewerClassNames = (whoIsMaximized: number) =>
+  whoIsMaximized === 2 ? "maximized" : whoIsMaximized === 3 ? "hidden" : "";
 
 const Previewer: React.FC<PreviewerProps> = ({
   editorText,
@@ -28,15 +39,7 @@ const Previewer: React.FC<PreviewerProps> = ({
 }) => {
   return (
     <>
-      <StyledPreviewWrap
-        className={
-          whoIsMaximized === 2
-            ? "maximized"
-            : whoIsMaximized === 3
-            ? "hidden"
-            : ""
-        }
-      >
+      <StyledPreviewWrap className={PreviewerClassNames(whoIsMaximized)}>
         <Toolbar
           name="Previewer"
           toggleMaximize={toggleMaximize}

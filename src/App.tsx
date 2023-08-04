@@ -1,9 +1,12 @@
 import { useState } from "react";
-import GlobalStyle from "./global.ts";
-import Editor from "./Components/Editor.tsx";
-import Previewer from "./Components/Previewer.tsx";
-import Footer from "./Components/Footer.tsx";
-import "../utils/Types.ts";
+import GlobalStyle from "./global";
+import Editor from "./Components/Editor";
+import Previewer from "./Components/Previewer";
+import Footer from "./Components/Footer";
+import "../utils/Types";
+
+const EDITOR_MAXIMIZE_ID = 3;
+const PREVIEWER_MAXIMIZE_ID = 2;
 
 function App() {
   const [editorText, setEditorText] =
@@ -68,15 +71,15 @@ And here. | Okay. | I think we get it.
       <Editor
         editorText={editorText}
         onChange={handleEditorChange}
-        toggleMaximize={() => toggleMaximize(3)}
+        toggleMaximize={() => toggleMaximize(EDITOR_MAXIMIZE_ID)}
         whoIsMaximized={whoIsMaximized}
-        maximizeId={3}
+        maximizeId={EDITOR_MAXIMIZE_ID}
       />
       <Previewer
         editorText={editorText}
-        toggleMaximize={() => toggleMaximize(2)}
+        toggleMaximize={() => toggleMaximize(PREVIEWER_MAXIMIZE_ID)}
         whoIsMaximized={whoIsMaximized}
-        maximizeId={2}
+        maximizeId={PREVIEWER_MAXIMIZE_ID}
       />
       <Footer />
     </>

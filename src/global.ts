@@ -72,14 +72,6 @@ blockquote {
     fill: var(--hover-color);
 }
 
-.maximized {
-    min-height: 95vh;
-}
-
-.hidden {
-    display: none;
-}
-
 .center {
     display: flex;
     align-items: center;

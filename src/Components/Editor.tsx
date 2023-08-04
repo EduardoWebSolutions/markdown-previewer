@@ -8,6 +8,14 @@ const StyledEditorWrap = styled.div`
   max-width: 600px;
   height: 100%;
   margin: auto;
+
+  &.maximized {
+    min-height: 95vh;
+  }
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 const StyledTextArea = styled.textarea`
@@ -23,7 +31,13 @@ const StyledTextArea = styled.textarea`
   &:focus {
     outline: none;
   }
+
+  &.maximized {
+    min-height: 95vh;
+  }
 `;
+const editorClassNames = (whoIsMaximized: number) =>
+  whoIsMaximized === 3 ? "maximized" : whoIsMaximized === 2 ? "hidden" : "";
 
 const Editor: React.FC<EditorProps> = ({
   editorText,
@@ -32,15 +46,7 @@ const Editor: React.FC<EditorProps> = ({
   whoIsMaximized,
 }) => {
   return (
-    <StyledEditorWrap
-      className={
-        whoIsMaximized === 3
-          ? "maximized"
-          : whoIsMaximized === 2
-          ? "hidden"
-          : ""
-      }
-    >
+    <StyledEditorWrap className={editorClassNames(whoIsMaximized)}>
       <Toolbar
         name="Editor"
         toggleMaximize={toggleMaximize}
@@ -48,18 +54,11 @@ const Editor: React.FC<EditorProps> = ({
         editorText={editorText}
       />
       <StyledTextArea
-        className={
-          whoIsMaximized === 3
-            ? "maximized"
-            : whoIsMaximized === 2
-            ? "hidden"
-            : ""
-        }
+        className={editorClassNames(whoIsMaximized)}
         onChange={onChange}
         id="editor"
-      >
-        {editorText}
-      </StyledTextArea>
+        value={editorText}
+      />
     </StyledEditorWrap>
   );
 };
