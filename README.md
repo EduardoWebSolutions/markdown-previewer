@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# <a href="https://eduardowebsolutions.github.io/markdown-previewer/">Markdown Previewer</a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A Markdown previewer built using React that allows you to instantly visualize your markdown content as you type. This project aims to provide a user-friendly interface for editing and previewing Markdown documents, making it a valuable tool for content creators, writers, and developers who want a seamless way to see how their markdown content will appear in a rendered format.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Live Preview:** See the rendered output of your Markdown content in real-time as you type.
+- **Syntax Highlighting:** Code blocks within your Markdown are syntax highlighted for improved readability.
+- **Toolbar Integration:** Convenient toolbar above the editor and preview panes for easy access to common formatting options.
+Maximize Mode: Toggle between maximizing the editor or preview panes to focus on your content.
+- **Responsive Design:** The previewer interface is designed to work smoothly on various screen sizes and devices.
 
-## Expanding the ESLint configuration
+## Technologies Used
+- **React:** A popular JavaScript library for building user interfaces.
+- **styled-components:** A CSS-in-JS library for styling React components.
+- **react-markdown:** A React component for rendering Markdown as React components.
+- **remark-gfm:** A Markdown parser for GitHub Flavored Markdown support.
+- **react-syntax-highlighter:** A syntax highlighter for code blocks within Markdown.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
+Clone this repository: ` git clone https://github.com/your-username/react-markdown-previewer.git `
 
-- Configure the top-level `parserOptions` property like this:
+Navigate to the project directory: ` cd react-markdown-previewer `
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Install dependencies: ` npm install `
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Start the development server: ` npm start `
+
+Open your browser and go to http://localhost:3000 to see the previewer in action.
+Feel free to customize, expand, or enhance this project to fit your needs and preferences. Happy Markdown writing!
