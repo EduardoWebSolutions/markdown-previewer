@@ -18,9 +18,9 @@ Maximize Mode: Toggle between maximizing the editor or preview panes to focus on
 - **react-syntax-highlighter:** A syntax highlighter for code blocks within Markdown.
 
 ## Getting Started
-Clone this repository: ` git clone https://github.com/your-username/react-markdown-previewer.git `
+Clone this repository: ` git clone https://github.com/EduardoWebSolutions/markdown-previewer.git `
 
-Navigate to the project directory: ` cd react-markdown-previewer `
+Navigate to the project directory: ` cd markdown-previewer `
 
 Install dependencies: ` npm install `
 
