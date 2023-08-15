@@ -62,7 +62,7 @@ In future iterations, the Markdown Previewer project could be expanded with the 
 
 1. **Open your browser and go to http://localhost:3000 to see the Markdown Previewer in action.**
    
-Feel free to customize, expand, or enhance this project to fit your needs and preferences. Happy Markdown writing!
+Feel free to customize, expand, or enhance this project to fit your needs and preferences. Happy Markdown Writing!
 
 ## Conclusion:
 
