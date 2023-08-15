@@ -37,6 +37,7 @@ A Markdown previewer built using React that allows you to instantly visualize yo
 The React Markdown Previewer streamlines the process of creating Markdown content. It enhances the writing experience by providing real-time previews, syntax highlighting, and an intuitive interface for formatting. Whether you're documenting code, writing blog posts, or creating README files, this tool empowers you to focus on content creation without constantly switching between editing and previewing.
 
 ## Future Enhancements:
+In future iterations, the Markdown Previewer project could be expanded with the following features:
 
 - **Customizable Themes:** Offer users a choice of themes for both the editor and preview panes.
   
