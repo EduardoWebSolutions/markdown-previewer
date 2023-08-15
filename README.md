@@ -67,5 +67,7 @@ Feel free to customize, expand, or enhance this project to fit your needs and pr
 
 The React Markdown Previewer offers a streamlined way to create and visualize Markdown content, making the process of writing and formatting content more efficient and intuitive. Whether you're drafting a README for your GitHub repository, writing a blog post, or documenting your code, this tool empowers you to focus on your content without constantly switching between editing and previewing.
 
-For questions, suggestions, and contributions, please feel free to reach out on the [markdown-previewer](https://github.com/EduardoWebSolutions/markdown-previewer).
+---
+
+For questions, suggestions, and contributions, please feel free to reach out to me [here](https://github.com/EduardoWebSolutions/).
 
