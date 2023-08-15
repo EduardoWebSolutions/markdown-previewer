@@ -59,7 +59,7 @@ The React Markdown Previewer streamlines the process of creating Markdown conten
 
 1. **Start the development server:** ` npm run dev `
 
-1. Open your browser and go to http://localhost:3000 to see the Markdown Previewer in action.
+1. **Open your browser and go to http://localhost:3000 to see the Markdown Previewer in action.**
    
 Feel free to customize, expand, or enhance this project to fit your needs and preferences. Happy Markdown writing!
 
