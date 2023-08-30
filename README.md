@@ -1,7 +1,7 @@
 # <a href="https://eduardowebsolutions.github.io/markdown-previewer/" target="_blank">Markdown Previewer</a>
 
 A Markdown previewer built using React that allows you to instantly visualize your markdown content as you type. This project aims to provide a user-friendly interface for editing and previewing Markdown documents, making it a valuable tool for content creators, writers, and developers who want a seamless way to see how their markdown content will appear in a rendered format.
-Check it out for yourself <a href="https://eduardowebsolutions.github.io/markdown-previewer/" target="_blank">Here!</a>
+<a href="https://eduardowebsolutions.github.io/markdown-previewer/" target="_blank">Check it out for yourself</a>
 
 ![markdown-previewer-preview](https://github.com/EduardoWebSolutions/markdown-previewer/blob/main/display/markdown-previewer-preview.png)
 
